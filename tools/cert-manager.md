@@ -24,6 +24,6 @@ openssl req -new -sha256 -subj "/CN=tkk" -key cert-key.pem -out cert.csr
 
 echo "subjectAltName=DNS:*.tkk.de,IP:192.168.10.152" >> extfile.cnf
 
-openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf
+openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem CAcreateserial -extfile extfile.cnf
 
 ```
