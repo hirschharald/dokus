@@ -25,7 +25,7 @@ api:
 entryPoints:
   web:
     address: :80
-# -- (Optional) Redirect all HTTP to HTTPS
+#  -- (Optional) Redirect all HTTP to HTTPS
     http:
       redirections:
         entryPoint:
@@ -73,29 +73,16 @@ entryPoints:
 #   insecureSkipVerify: true
 
 # -- (Optional) Overwrite Default Certificates
-# tls:
-#   stores:
-#     default:
-#       defaultCertificate:
-#         certFile: /etc/traefik/certs/cert.pem
-#         keyFile: /etc/traefik/certs/cert-key.pem
-# -- (Optional) Disable TLS version 1.0 and 1.1
-#   options:
-#     default:
-#       minVersion: VersionTLS12
-
-
 tls:
-  certificates:
-    - certFile: /etc/traefik/certs/cer.crt
-      keyFile: /etc/traefik/certs/key.key
-
-serversTransport:
-  insecureSkipVerify: false
-  rootCAs:
-    - "/certs/ca.pem"
-
-openssl req -x509 -newkey rsa:2048 -keyout tls.key -out tls.crt -days 365 -nodes
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/traefik/certs/cert-pub.pem
+        keyFile: /etc/traefik/certs/cert-key.pem
+# -- (Optional) Disable TLS version 1.0 and 1.1
+  options:
+    default:
+      minVersion: VersionTLS12
 
 providers:
   docker:
