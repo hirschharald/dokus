@@ -1,5 +1,17 @@
 ## Self-Signed Certificates
 
+
+## CA Cert Chain
+```
+ca-key.pem --> ca-root.pem 
+```
+
+## Selfsigned Server Cert
+
+```
+cert-key.pem --> cert.csr --> cert-pub.pem --> ca-root.pem + cert-pub.pem
+```
+
 ### Upload existing CA.key and CA.crt files (Option 1)
 
 1. Create a self-signed Certificate Authority creating a ca.key (private-key) and ca.crt (certificate)
@@ -35,7 +47,7 @@ openssl req -new -sha256 -subj "/CN=tkk" -key cert-key.pem -out cert.csr
 echo "subjectAltName=DNS:*.tkk.de,IP:192.168.10.152" >> extfile.cnf
 
 #### create public key cert
-openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca-root.pem -CAkey ca-key.pem -out cert-pub.pem CAcreateserial -extfile extfile.cnf
+openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca-root.pem -CAkey ca-key.pem -out cert-pub.pem -CAcreateserial -extfile extfile.cnf
 
 
 ### certs for webserver config
