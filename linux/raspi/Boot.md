@@ -53,3 +53,50 @@ A1 expand file system
 lsblk
 
 ```
+
+### install docker
+
+```
+sudo apt-get update
+
+2. installiere Pakete
+
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+3.Füge das offizielle Docker-Repository hinzu:
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=arm64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+
+4. installeire docker engine
+
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+
+5. Überprüfe, ob Docker erfolgreich installiert wurde:
+
+sudo docker run hello-world
+
+
+### install docker-compose
+
+```
+1. aktuelle version
+   
+   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+2.
+
+   sudo chmod +x /usr/local/bin/docker-compose
+
+3. überprüfe
+   
+   docker-compose --version
