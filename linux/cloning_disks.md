@@ -37,6 +37,7 @@ Gerät      Boot Anfang     Ende Sektoren Größe Kn Typ
 
 0
 sudo apt install pv
+pv 🇬🇧 (pipe viewer) ermöglicht es, den Fortschritt einer Aktion oder Aufgabe durch eine sog. "Pipe" zu überwachen. Details zu dieser Methode, die Ausgabe des einen Programms als Eingabe eines anderen Programms zu verwenden, sind dem Artikel Shell/Umleitungen (Abschnitt „Der-Pipe-Operator") 
 
 sudo dd if=/dev/sdb bs=512 count=60551167 conv=sync,noerror | pv |sudo dd of=/dev/sda
 
