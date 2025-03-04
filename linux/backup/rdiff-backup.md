@@ -45,7 +45,7 @@ rdiff-backup test hostname.net::/somedir
 ```
 ## Beispiele
 ```
-rdiff-backup -v5  /home/tkk "/media/tkk/backup daten/tkk"
+rdiff-backup -v5  backup /home/tkk /media/tkk/backup_daten/tkk
 
 rdiff-backup -v5 backup --exclude-filelist .excludeBackup /home/tkk /media/tkk/backup_daten/tkk
 
