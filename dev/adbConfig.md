@@ -30,7 +30,7 @@ einstellungen --> über das telefon --> viermal tippen auf Build Nummer
         Create a new udev rule file:
      
 ```
-        sudo nano /etc/udev/rules.d/51-android.rules
+        sudo vi /etc/udev/rules.d/51-android.rules
 ```
         Add the following line to the file, replacing idVendor and idProduct with the values you found:
       
