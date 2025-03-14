@@ -3,6 +3,7 @@
 #### on Web
 
 ````
+npm i expo
 npx create-expo-app eas --template blank-typescript
 cd eas
 
