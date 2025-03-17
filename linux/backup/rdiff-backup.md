@@ -43,11 +43,10 @@ rdiff-backup remove increments --older-than 2W host.net::/remote-dir
 ```
 rdiff-backup test hostname.net::/somedir
 ```
-## Beispiele
+## Beispiele für Backup
 ```
-rdiff-backup -v5  backup /home/tkk /media/tkk/backup_daten/tkk
 
 rdiff-backup -v5 backup --exclude-filelist .excludeBackup /home/tkk /media/tkk/backup_daten/tkk
-
+rdiff-backup -v5 backup --exclude-filelist .excludeDatenBackup --exclude-regexp '.*/node_modules' /media/tkk/Daten /media/tkk/backup_daten/daten
 
 ```
