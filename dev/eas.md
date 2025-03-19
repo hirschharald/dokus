@@ -1,6 +1,6 @@
 ## Expo Go Projet
 
-#### on Web
+### on Web
 
 ````
 npm i expo
@@ -12,8 +12,23 @@ npx expo install react-dom react-native-web @expo/metro-runtime
 
 ````
 
+### Package erstellen
 
-## EAS Projekt
+
+#### Paket verlinken (im Paketverzeichnis):
+```
+cd /pfad/zu/deinem/paket
+npm link
+
+```
+#### Paket im Projekt verwenden
+```
+cd /pfad/zu/deinem/projekt
+npm link <paket-name>
+
+```
+
+### EAS Projekt
 
 
 ````
