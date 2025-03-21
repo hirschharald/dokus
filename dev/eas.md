@@ -12,22 +12,6 @@ npx expo install react-dom react-native-web @expo/metro-runtime
 
 ````
 
-### Package erstellen
-
-
-#### Paket verlinken (im Paketverzeichnis):
-```
-cd /pfad/zu/deinem/paket
-npm link
-
-```
-#### Paket im Projekt verwenden
-```
-cd /pfad/zu/deinem/projekt
-npm link <paket-name>
-
-```
-
 ### EAS Projekt
 
 

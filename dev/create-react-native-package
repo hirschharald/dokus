@@ -1,0 +1,108 @@
+# NPM react Native  Package erstellen
+
+
+## Paket Ḱonfiguration
+
+##### tsconfig
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": false,
+    "jsx": "react-native",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+
+
+```
+##### package.json
+```json
+{
+  "name": "tkk-react-native-package",
+  "version": "1.8.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "typescript": "",
+    "@types/react": "*",
+    "@types/react-native": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+```
+#### MyComponent.tsx
+```tsx
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { MyComponentProps } from "./types";
+
+const MyComponent: React.FC<MyComponentProps> = ({ title, onPress }) => {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    backgroundColor: '#f0f0f0',
+  },
+  text: {
+    fontSize: 16,
+    color: '#333',
+  },
+});
+
+export default MyComponent;
+```
+#### types.ts
+```tsx
+export interface MyComponentProps {
+    title: string;
+    onPress?: () => void;
+  }
+
+```
+#### index.tsx
+```tsx
+export { default } from './MyComponent';
+export type { MyComponentProps } from './types';
+```
+
+## Build and publish
+
+```shell
+
+npm run prepare
+
+npm publish
+
+```
