@@ -1,5 +1,24 @@
 # NPM react Native  Package erstellen
 
+## mit bob
+
+```bash
+npx create-react-native-library@latest awesome-library
+```
+##### Verzeichnis Struktur zum Testen
+```
+MyApp
+├── node_modules
+├── modules              <-- folder for your local libraries
+│   └── awesome-library  <-- your local library
+├── android
+├── ios
+├── src
+├── index.js
+└── package.json  <---"dependencies": {
+  "react-native-awesome-library": "link:./modules/awesome-library"
+}
+```
 
 ## Paket Ḱonfiguration
 
