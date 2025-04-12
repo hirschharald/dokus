@@ -25,7 +25,6 @@ npm install typescript ts-node @types/node @types/express nodemon @types/cors @t
 npx tsc --init
 ```
 ## Grundlegende Projektstruktur erstellen
-Copy
 ```
 mein-express-projekt/ 
 ├── src/
