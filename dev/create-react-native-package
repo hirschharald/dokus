@@ -122,6 +122,6 @@ export type { MyComponentProps } from './types';
 
 npm run prepare
 
-npm publish
+npm version patch|release|minor
 
 ```

@@ -100,3 +100,25 @@ sudo docker run hello-world
 3. überprüfe
    
    docker-compose --version
+
+
+## Fallback Boot Option
+
+Um eine SD-Karte als **Fallback-Boot-Option** zu nutzen, falls das NVMe-Laufwerk nicht erkannt wird oder fehlschlägt, folge diesen Schritten:
+
+```bash
+  vcgencmd bootloader_config
+  ```
+  - Stelle sicher, dass `BOOT_ORDER` auf `0xf41` (Priorität: USB → SD-Karte) gesetzt ist.  
+    Beispiel:
+    ```
+    BOOT_ORDER=0xf41
+
+    BOOT_ORDER=0x61 (Priorität:  MNVE -> then SD)
+
+    ```
+### **Beispiel-Bootloader-Konfiguration**
+```bash
+# Aktiviere USB-Boot (NVMe) mit Fallback zur SD-Karte
+sudo raspi-config nonint do_boot_order 0xf41
+```

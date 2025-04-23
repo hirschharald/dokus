@@ -110,5 +110,9 @@ Permission denied (publickey)
 
     Falls du alle durch den selben ersetzten willst kannst du dann auch deine ssh-config mit einmal abändern,
     indem du alle Zeilen, die IdentityFile enthalten durch eine neue Zeile ersetzt
+
+
+## Neues Passwort
 ```
+ssh-keygen -p -f ./id_rsa
    
